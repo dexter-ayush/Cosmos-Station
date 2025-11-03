@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmos Station - Your Gateway to the Galaxy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 
+      This is the main galaxy container. 
+      The "zoom" effect happens when you hover over this element.
+    -->
+    <div class="galaxy-container">
+        
+        <!-- Welcome Title -->
+        <h1 class="main-title">Welcome to the Cosmos Station</h1>
+        <p class="subtitle">Hover over the galaxy to zoom. Click a celestial body to explore.</p>
+
+        <!-- 
+          Each celestial body is a link (<a>) so it's clickable.
+          We use "position: absolute" in CSS to place it.
+        -->
+
+        <!-- Body 1: Mars -->
+        <a href="mars.html" class="cosmic-body" id="mars">
+            <div class="planet-visual mars"></div>
+            <span class="label">Mars</span>
+        </a>
+
+        <!-- Body 2: Proxima Centauri (A Star) -->
+        <a href="proxima.html" class="cosmic-body" id="proxima-centauri">
+            <div class="star-visual proxima"></div>
+            <span class="label">Proxima Centauri</span>
+        </a>
+
+        <!-- Body 3: Orion Nebula -->
+        <a href="nebula.html" class="cosmic-body" id="orion-nebula">
+            <div class="nebula-visual orion"></div>
+            <span class="label">Orion Nebula</span>
+        </a>
+        
+        <!-- Body 4: A Distant Galaxy -->
+        <a href="#" class="cosmic-body" id="distant-galaxy">
+            <div class="galaxy-visual"></div>
+            <span class="label">Distant Galaxy (Placeholder)</span>
+        </a>
+
+        <!-- === NEWLY ADDED BODIES === -->
+
+        <!-- Our Sun -->
+        <a href="sun.html" class="cosmic-body" id="sun">
+            <div class="star-visual sun"></div>
+            <span class="label">The Sun</span>
+        </a>
+
+        <!-- Planets -->
+        <a href="mercury.html" class="cosmic-body" id="mercury">
+            <div class="planet-visual mercury"></div>
+            <span class="label">Mercury</span>
+        </a>
+        
+        <a href="venus.html" class="cosmic-body" id="venus">
+            <div class="planet-visual venus"></div>
+            <span class="label">Venus</span>
+        </a>
+
+        <a href="earth.html" class="cosmic-body" id="earth">
+            <div class="planet-visual earth"></div>
+            <span class="label">Earth</span>
+        </a>
+
+        <a href="jupiter.html" class="cosmic-body" id="jupiter">
+            <div class="planet-visual jupiter"></div>
+            <span class="label">Jupiter</span>
+        </a>
+
+        <a href="saturn.html" class="cosmic-body" id="saturn">
+            <div class="planet-visual saturn">
+                <div class="rings"></div>
+            </div>
+            <span class="label">Saturn</span>
+        </a>
+
+        <a href="uranus.html" class="cosmic-body" id="uranus">
+            <div class="planet-visual uranus"></div>
+            <span class="label">Uranus</span>
+        </a>
+
+        <a href="neptune.html" class="cosmic-body" id="neptune">
+            <div class="planet-visual neptune"></div>
+            <span class="label">Neptune</span>
+        </a>
+
+        <!-- Andromeda Galaxy -->
+        <a href="andromeda.html" class="cosmic-body" id="andromeda">
+            <div class="galaxy-visual andromeda"></div>
+            <span class="label">Andromeda Galaxy</span>
+        </a>
+
+    </div>
+
+</body>
+</html>
+

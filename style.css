@@ -1,0 +1,335 @@
+/* Basic setup */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    /* overflow: hidden;  <-- REMOVED THIS LINE to allow scrolling */
+    font-family: 'Inter', sans-serif;
+    background-color: #000;
+}
+
+/* 1. The Galaxy Container 
+  This holds our entire scene.
+*/
+.galaxy-container {
+    /* MADE THE CONTAINER 2X THE SCREEN SIZE */
+    height: 200vh;
+    width: 200vw;
+    position: relative; /* This is the anchor for all the cosmic bodies */
+    
+    /* A simple CSS-only starfield background */
+    background-color: #000005;
+    background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                      radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+                      radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+                      radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    
+    /* THE "ZOOM" EFFECT IS NOW THE DEFAULT STATE, SO NO HOVER NEEDED */
+    /* transition: transform 1.5s ease-out; <-- REMOVED */
+    /* transform-origin: center center; <-- REMOVED */
+}
+
+/* This is the magic: when you hover the container, it scales up. */
+/* .galaxy-container:hover {
+    transform: scale(1.4); 
+} <-- REMOVED THIS ENTIRE BLOCK */
+
+/* Titles on the homepage */
+.main-title {
+    color: white;
+    text-align: center;
+    /* padding-top: 40px; <-- REPLACED WITH 'top' */
+    font-weight: 700;
+    font-size: 2rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    /* transition: opacity 0.5s ease; <-- REMOVED */
+    
+    /* ADDED RULES TO FIX TITLE TO SCREEN */
+    position: fixed;
+    top: 20px; /* Reduced padding slightly */
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+.subtitle {
+    color: #ccc;
+    text-align: center;
+    font-size: 1rem;
+    /* transition: opacity 0.5s ease; <-- REMOVED */
+    
+    /* ADDED RULES TO FIX SUBTITLE TO SCREEN */
+    position:fixed;
+    top: 65px; /* Placed below main title */
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* When zoomed, fade out the titles so we can see the bodies */
+/* .galaxy-container:hover .main-title,
+.galaxy-container:hover .subtitle {
+    opacity: 0;
+} <-- REMOVED THIS ENTIRE BLOCK */
+
+
+/* 2. The Cosmic Bodies (The <a> tags)
+*/
+.cosmic-body {
+    position: absolute; /* This lets us place it anywhere */
+    display: block;
+    text-decoration: none;
+    z-index: 10;
+}
+
+/* 3. The Hover Effect (on individual bodies)
+*/
+.cosmic-body:hover .label {
+    /* Show the label on hover */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cosmic-body:hover .planet-visual,
+.cosmic-body:hover .star-visual,
+.cosmic-body:hover .nebula-visual,
+.cosmic-body:hover .galaxy-visual {
+    /* Make the individual body pop */
+    transform: scale(1.2); 
+    box-shadow: 0 0 25px #fff, 0 0 45px #00aaff;
+}
+
+
+/* 4. Styling the Visuals and Labels
+*/
+.label {
+    position: absolute;
+    bottom: -35px; /* Position label just below the body */
+    left: 50%;
+    
+    /* This centers the label */
+    transform: translateX(-50%) translateY(10px); 
+    
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap; /* Prevents line breaks */
+    
+    /* Hide by default */
+    opacity: 0; 
+    transition: all 0.3s ease;
+    z-index: 11;
+}
+
+/* Shared styles for all visuals */
+.planet-visual, .star-visual, .nebula-visual, .galaxy-visual {
+    border-radius: 50%; /* Default to round */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* 5. Positioning and Styling Each Body 
+*/
+
+/* --- Mars --- */
+#mars {
+    top: 30%;
+    left: 20%;
+}
+.planet-visual.mars {
+    width: 40px;
+    height: 40px;
+    background-color: #c1440e;
+    border: 2px solid #ff7a5a;
+    box-shadow: 0 0 15px #c1440e;
+}
+
+/* --- Proxima Centauri --- */
+#proxima-centauri {
+    top: 65%;
+    left: 70%;
+}
+.star-visual.proxima {
+    width: 25px;
+    height: 25px;
+    background-color: #fffb8d;
+    box-shadow: 0 0 20px #fffb8d, 0 0 30px #fff; /* Make it glow */
+}
+
+/* --- Orion Nebula --- */
+#orion-nebula {
+    top: 25%;
+    left: 80%;
+}
+.nebula-visual.orion {
+    width: 120px;
+    height: 90px;
+    background: radial-gradient(circle, #ff81f7, #c100ff, #5a007a, transparent 70%);
+    border-radius: 40% 60% / 50% 70%; /* Irregular shape */
+    opacity: 0.7;
+    filter: blur(5px); /* Make it look "gassy" */
+}
+
+/* --- Distant Galaxy --- */
+#distant-galaxy {
+    top: 80%;
+    left: 15%;
+}
+.galaxy-visual {
+    width: 80px;
+    height: 20px; /* Flat like a spiral */
+    background: radial-gradient(ellipse, #fff, #aaccff, transparent 70%);
+    border-radius: 50% / 20%; /* Elliptical shape */
+    opacity: 0.8;
+}
+
+/* === NEW STYLES FOR ADDED BODIES === */
+
+/* --- The Sun --- */
+#sun {
+    top: 50%;
+    left: 50%;
+    /* Use negative margins to perfectly center it */
+    margin-left: -75px;
+    margin-top: -75px; 
+    z-index: 1; /* Behind planets but clickable */
+}
+.star-visual.sun {
+    width: 150px;
+    height: 150px;
+    background-color: #fdb813;
+    box-shadow: 0 0 80px #fdb813, 0 0 120px #fdb813;
+    border-radius: 50%;
+    /* A slow, fiery pulse */
+    animation: pulse 4s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* --- Mercury --- */
+#mercury {
+    top: 48%;
+    left: 38%;
+}
+.planet-visual.mercury {
+    width: 15px;
+    height: 15px;
+    background-color: #aEaEaE;
+    border: 1px solid #d8d8d8;
+}
+
+/* --- Venus --- */
+#venus {
+    top: 60%;
+    left: 42%;
+}
+.planet-visual.venus {
+    width: 25px;
+    height: 25px;
+    background-color: #dEaE5d;
+    border: 1px solid #f8d5a1;
+}
+
+/* --- Earth --- */
+#earth {
+    top: 38%;
+    left: 60%;
+}
+.planet-visual.earth {
+    width: 30px;
+    height: 30px;
+    background-color: #0077be;
+    border: 2px solid #90fA90; /* Green for land */
+    box-shadow: 0 0 10px #fff;
+}
+
+/* --- Jupiter --- */
+#jupiter {
+    top: 75%;
+    left: 80%;
+}
+.planet-visual.jupiter {
+    width: 80px;
+    height: 80px;
+    background-color: #cE9c6c;
+    border: 2px solid #aA7e5c;
+    /* Simple stripes */
+    background-image: linear-gradient(to bottom, 
+        #d8b898 20%, 
+        #aA7e5c 20%, #aA7e5c 40%, 
+        #d8b898 40%, #d8b898 60%, 
+        #cE9c6c 60%, #cE9c6c 80%,
+        #aA7e5c 80%);
+}
+
+/* --- Saturn --- */
+#saturn {
+    top: 10%;
+    left: 10%;
+}
+.planet-visual.saturn {
+    width: 60px;
+    height: 60px;
+    background-color: #eAe6aE;
+    border: 2px solid #dCd99d;
+    position: relative; /* For the rings */
+}
+/* Pure CSS rings */
+.planet-visual.saturn .rings {
+    position: absolute;
+    width: 120px; /* 200% of planet width */
+    height: 10px;
+    border: 2px solid #cEaE6c;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-20deg);
+}
+
+/* --- Uranus --- */
+#uranus {
+    top: 50%;
+    left: 5%;
+}
+.planet-visual.uranus {
+    width: 50px;
+    height: 50px;
+    background-color: #aEdEeE;
+    border: 2px solid #d0f0f0;
+}
+
+/* --- Neptune --- */
+#neptune {
+    top: 85%;
+    left: 45%;
+}
+.planet-visual.neptune {
+    width: 50px;
+    height: 50px;
+    background-color: #3e5Ed8;
+    border: 2px solid #6080f8;
+}
+
+/* --- Andromeda Galaxy --- */
+#andromeda {
+    top: 5%;
+    left: 65%;
+}
+.galaxy-visual.andromeda {
+    width: 150px;
+    height: 40px;
+    background: radial-gradient(ellipse, #f0f8ff, #aaccff, transparent 60%);
+    border-radius: 50% / 25%;
+    opacity: 0.9;
+    filter: blur(2px);
+    transform: rotate(-30deg);
+}
+
+
