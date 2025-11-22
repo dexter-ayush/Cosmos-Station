@@ -1,0 +1,114 @@
+/* ===== Global ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #000;
+  color: #f2c185;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #0d0d0d;
+  border-bottom: 1px solid #f2c185;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f2c185;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #f7d8b4;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ffb862;
+  border-bottom: 2px solid #ffb862;
+}
+
+/* ===== Page Content ===== */
+.page {
+  padding: 70px 80px;
+  background-image: url('/Cosmos/cosmos.jpg'); backdrop-filter: blur(5px);
+    /* opacity: 0.5; */
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color: #ffb862;
+}
+
+.subtitle {
+  color: #f8ddb8;
+  font-size: 1.15rem;
+  margin-bottom: 50px;
+}
+
+/* ===== Info Cards ===== */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.info-card {
+  background: #111;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #33210f;
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  border-color: #ffb862;
+  transform: translateY(-5px);
+}
+
+.info-card h2 {
+  margin-bottom: 15px;
+  color: #ffb862;
+}
+
+.info-card ul {
+  padding-left: 18px;
+}
+
+.info-card li {
+  margin-bottom: 8px;
+  color: #f7d9b7;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 25px;
+  border-top: 1px solid #33210f;
+  margin-top: 50px;
+  color: #f2c185;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .page {
+    padding: 40px 25px;
+    text-align: center;
+  }
+}

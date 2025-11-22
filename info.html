@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cosmos Station | Information</title>
+  <link rel="stylesheet" href="info.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Cosmos Station</div>
+    <nav>
+      <a href="homepage.html">Home</a>
+      <a href="index.html">Explore</a>
+      <a href="about.html">About Us</a>
+      <a href="info.html" class="active">Information</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="section">
+      <h1>How to Use Cosmos Station</h1>
+      <p class="subtitle">
+        A quick guide to exploring the interactive solar system and understanding what you see.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h2>Using the Animation</h2>
+          <ul>
+            <li>Go to the <strong>Explore</strong> page from the top navigation.</li>
+            <li>Move your mouse over planets to see their names.</li>
+            <li>Click on any planet or the Sun to open detailed information on the right side.</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h2>What You Will Learn</h2>
+          <ul>
+            <li>Type of each celestial body (star, terrestrial planet, gas giant, etc.).</li>
+            <li>Short description of each planet.</li>
+            <li>Important quick facts: size, atmosphere, orbit, and special features.</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h2>Tips for Students</h2>
+          <ul>
+            <li>Use the site as a visual revision tool before exams.</li>
+            <li>Combine it with your textbook or class notes for deeper understanding.</li>
+            <li>Try to remember at least 2–3 facts about each planet in one sitting.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Cosmos Station. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

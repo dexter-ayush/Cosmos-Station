@@ -1,0 +1,87 @@
+/* ===== Global ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #000;
+  color: #f2c185;
+}
+
+/* ===== Navbar (same as index) ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #0d0d0d;
+  border-bottom: 1px solid #f2c185;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #f2c185;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #f7d8b4;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ffb862;
+  border-bottom: 2px solid #ffb862;
+}
+
+/* ===== About Page Content ===== */
+.page {
+  padding: 70px 80px;
+  background-image: url('/Cosmos/gal.jpg'); backdrop-filter: blur(5px);
+    /* opacity: 0.5; */
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #ffb862;
+}
+
+.subtitle {
+  color: #f8ddb8;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.text-block p {
+  margin-top: 20px;
+  color: #f7d9b7;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 25px;
+  border-top: 1px solid #33210f;
+  margin-top: 50px;
+  color: #f2c185;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .page {
+    padding: 40px 25px;
+    text-align: center;
+  }
+}

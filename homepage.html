@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cosmos Station | Home</title>
+  <link rel="stylesheet" href="homepage.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Cosmos Station</div>
+    <nav>
+      <a href="homepage.html" class="active">Home</a>
+      <a href="index.html">Explore</a>
+      <a href="about.html">About Us</a>
+      <a href="info.html">Information</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <video autoplay muted loop class="hero-video">
+      <source src="/Cosmos/Cosmos_Zoom_Video_Generation.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>Welcome to <span>Cosmos Station</span></h1>
+      <p>
+        Journey through our interactive solar system. Hover over planets, click
+        celestial bodies, and discover fascinating facts about our cosmic home.
+      </p>
+      <a href="index.html" class="btn-primary">Explore the Solar System</a>
+      <p class="hero-caption">A glimpse of your upcoming space adventure.</p>
+    </div>
+  </main>
+
+  <section class="section features">
+    <h2>What You Can Do at Cosmos Station</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Interactive Solar System</h3>
+        <p>Hover and click on planets to view important facts and descriptions.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Learn Visually</h3>
+        <p>Understand orbits, relative positions, and names through smooth animations.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Student Friendly</h3>
+        <p>Designed for learners, with simple explanations and clean visuals.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Cosmos Station. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

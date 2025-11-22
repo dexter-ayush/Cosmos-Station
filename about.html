@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cosmos Station | About Us</title>
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Cosmos Station</div>
+    <nav>
+      <a href="homepage.html">Home</a>
+      <a href="index.html">Explore</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="info.html">Information</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="section">
+      <h1>About Cosmos Station</h1>
+      <p class="subtitle">
+        Cosmos Station is a simple, student-friendly portal to visualize and learn about our solar system.
+      </p>
+
+      <div class="text-block">
+        <p>
+          Our goal is to make space science accessible and engaging. Instead of
+          just reading about planets, you can interact with them directly on
+          screen—hover, click, and explore.
+        </p>
+        <p>
+          This project is especially helpful for school and college students who
+          want a quick, visual way to revise the basics of the solar system.
+        </p>
+        <p>
+          We believe learning becomes more memorable when it is interactive,
+          visual, and fun. Cosmos Station is a small step in that direction.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Cosmos Station. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
